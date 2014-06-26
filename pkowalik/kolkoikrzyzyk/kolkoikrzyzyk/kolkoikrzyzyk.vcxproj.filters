@@ -53,9 +53,6 @@
     <ClInclude Include="ObiektOblakania.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Statystyka.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">

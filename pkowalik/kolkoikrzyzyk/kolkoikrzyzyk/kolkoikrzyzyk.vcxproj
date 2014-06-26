@@ -100,7 +100,6 @@
     </ClInclude>
     <ClInclude Include="Matryca.h" />
     <ClInclude Include="ObiektOblakania.h" />
-    <ClInclude Include="Statystyka.h" />
     <ClInclude Include="pole.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />

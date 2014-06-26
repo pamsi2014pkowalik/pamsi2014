@@ -9,6 +9,7 @@ public:
 	vector<ObiektOblakania> mlodsze;
 
 	ObiektOblakania();
+//	~ObiektOblakania();
 	ObiektOblakania(const ObiektOblakania& X);
 	ObiektOblakania& operator=(const ObiektOblakania& X);
 	void UtworzMlodsze();
@@ -23,7 +24,12 @@ ObiektOblakania::ObiektOblakania(){
 	gracz='-';
 	mlodsze.clear();
 }
-
+/*
+ObiektOblakania::~ObiektOblakania(){
+	mlodsze.clear();
+	delete this;
+}
+*/
 ObiektOblakania::ObiektOblakania(const ObiektOblakania& X){
 	WinLooseBalance=X.WinLooseBalance;
 	gracz=X.gracz;
@@ -40,69 +46,6 @@ ObiektOblakania& ObiektOblakania::operator=(const ObiektOblakania& X){
 	mlodsze=X.mlodsze;
 	return *this;
 }
-/*
-bool ObiektOblakania::Przeanalizuj(){
-	if(situation->Wygrana('X')){
-		WinLooseBalance=10;
-		last=true;
-		return true;
-	}
-	if(situation->Wygrana('O')){
-		WinLooseBalance=-10;
-		last=true;
-		return false;
-	}
-	if(situation->Pelny()){
-		WinLooseBalance=1;
-		last=true;
-		return true;
-	}
-	WinLooseBalance=0;
-	return true;
-}
-*/
-/*
-bool ObiektOblakania::DodajMlodsze(){
-	cliext::vector<ObiektOblakania^> mlodsze1;
-	vector<ObiektOblakania^>::iterator it;
-	ObiektOblakania^ O;
-	ObiektOblakania^ wsk;
-	starszy=gcnew ObiektOblakania;
-
-	O->starszy=this;
-	if(gracz=='O'){
-		O->gracz='X';
-	} else {
-		O->gracz='O';
-	}
-	O->mlodsze->clear();
-	for(int k=0; k<4; k++){
-		for(int j=0; j<4; j++){
-			for(int i=0; i<4; i++){
-				if(situation->matrix[i][j][k]=='-'){
-					O->situation=situation;
-					O->situation->Add(i, j, k, O->gracz);
-					if(O->gracz=='O'){
-						if(O->Przeanalizuj()){
-							wsk=gcnew ObiektOblakania;
-							*wsk=O;
-							mlodsze.push_back(wsk);
-						} else {
-							return false;
-						}
-					} else {
-						if(O->Przeanalizuj() && (O->situation->Wygrana('X') || O->situation->Pelny())){
-							wsk=gcnew ObiektOblakania;
-							*wsk=O;
-							mlodsze1.push_back(wsk);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-*/
 
 void ObiektOblakania::UtworzMlodsze(){
 	ObiektOblakania O;

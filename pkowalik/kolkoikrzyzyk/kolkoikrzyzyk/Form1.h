@@ -267,13 +267,19 @@ private: System::Windows::Forms::Button^  mfle16;
 private: System::Windows::Forms::Button^  fle16;
 private: System::Windows::Forms::GroupBox^  Right;
 private: System::Windows::Forms::GroupBox^  Gracze;
-private: System::Windows::Forms::RadioButton^  radioButton3;
-private: System::Windows::Forms::RadioButton^  radioButton2;
-private: System::Windows::Forms::RadioButton^  radioButton1;
+private: System::Windows::Forms::RadioButton^  CC;
+
+private: System::Windows::Forms::RadioButton^  PC;
+
+private: System::Windows::Forms::RadioButton^  Player2;
+
 private: System::Windows::Forms::GroupBox^  Rozpoczyna;
-private: System::Windows::Forms::RadioButton^  radioButton5;
-private: System::Windows::Forms::RadioButton^  radioButton4;
-private: System::Windows::Forms::TextBox^  LOGS;
+private: System::Windows::Forms::RadioButton^  P;
+
+private: System::Windows::Forms::RadioButton^  C;
+
+
+private: System::Windows::Forms::Button^  NG;
 
 
 
@@ -719,13 +725,13 @@ private: System::Windows::Forms::TextBox^  LOGS;
 			this->fle16 = (gcnew System::Windows::Forms::Button());
 			this->Right = (gcnew System::Windows::Forms::GroupBox());
 			this->Gracze = (gcnew System::Windows::Forms::GroupBox());
-			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
+			this->CC = (gcnew System::Windows::Forms::RadioButton());
+			this->PC = (gcnew System::Windows::Forms::RadioButton());
+			this->Player2 = (gcnew System::Windows::Forms::RadioButton());
 			this->Rozpoczyna = (gcnew System::Windows::Forms::GroupBox());
-			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
-			this->LOGS = (gcnew System::Windows::Forms::TextBox());
+			this->P = (gcnew System::Windows::Forms::RadioButton());
+			this->C = (gcnew System::Windows::Forms::RadioButton());
+			this->NG = (gcnew System::Windows::Forms::Button());
 			this->Front->SuspendLayout();
 			this->Middle1st->SuspendLayout();
 			this->Middle2nd->SuspendLayout();
@@ -1519,7 +1525,6 @@ private: System::Windows::Forms::TextBox^  LOGS;
 			this->X->Name = L"X";
 			this->X->Size = System::Drawing::Size(38, 21);
 			this->X->TabIndex = 1;
-			this->X->TabStop = true;
 			this->X->Text = L"X";
 			this->X->UseVisualStyleBackColor = true;
 			this->X->CheckedChanged += gcnew System::EventHandler(this, &Form1::X_CheckedChanged);
@@ -1532,7 +1537,6 @@ private: System::Windows::Forms::TextBox^  LOGS;
 			this->O->Name = L"O";
 			this->O->Size = System::Drawing::Size(40, 21);
 			this->O->TabIndex = 0;
-			this->O->TabStop = true;
 			this->O->Text = L"O";
 			this->O->UseVisualStyleBackColor = true;
 			this->O->CheckedChanged += gcnew System::EventHandler(this, &Form1::O_CheckedChanged);
@@ -1544,7 +1548,7 @@ private: System::Windows::Forms::TextBox^  LOGS;
 			this->Wygral->Name = L"Wygral";
 			this->Wygral->Size = System::Drawing::Size(164, 22);
 			this->Wygral->TabIndex = 9;
-			this->Wygral->Text = L"Gra sie toczy";
+			this->Wygral->Text = L"Gra sie toczy...";
 			// 
 			// groupBox2
 			// 
@@ -3090,9 +3094,9 @@ private: System::Windows::Forms::TextBox^  LOGS;
 			// 
 			// Gracze
 			// 
-			this->Gracze->Controls->Add(this->radioButton3);
-			this->Gracze->Controls->Add(this->radioButton2);
-			this->Gracze->Controls->Add(this->radioButton1);
+			this->Gracze->Controls->Add(this->CC);
+			this->Gracze->Controls->Add(this->PC);
+			this->Gracze->Controls->Add(this->Player2);
 			this->Gracze->Location = System::Drawing::Point(1082, 162);
 			this->Gracze->Name = L"Gracze";
 			this->Gracze->Size = System::Drawing::Size(176, 107);
@@ -3100,43 +3104,46 @@ private: System::Windows::Forms::TextBox^  LOGS;
 			this->Gracze->TabStop = false;
 			this->Gracze->Text = L"Gracze";
 			// 
-			// radioButton3
+			// CC
 			// 
-			this->radioButton3->AutoSize = true;
-			this->radioButton3->Location = System::Drawing::Point(7, 77);
-			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(107, 21);
-			this->radioButton3->TabIndex = 2;
-			this->radioButton3->TabStop = true;
-			this->radioButton3->Text = L"CPU vs CPU";
-			this->radioButton3->UseVisualStyleBackColor = true;
+			this->CC->AutoSize = true;
+			this->CC->Location = System::Drawing::Point(7, 77);
+			this->CC->Name = L"CC";
+			this->CC->Size = System::Drawing::Size(107, 21);
+			this->CC->TabIndex = 2;
+			this->CC->Text = L"CPU vs CPU";
+			this->CC->UseVisualStyleBackColor = true;
+			this->CC->CheckedChanged += gcnew System::EventHandler(this, &Form1::CC_CheckedChanged);
 			// 
-			// radioButton2
+			// PC
 			// 
-			this->radioButton2->AutoSize = true;
-			this->radioButton2->Location = System::Drawing::Point(7, 50);
-			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(119, 21);
-			this->radioButton2->TabIndex = 1;
-			this->radioButton2->TabStop = true;
-			this->radioButton2->Text = L"Player vs CPU";
-			this->radioButton2->UseVisualStyleBackColor = true;
+			this->PC->AutoSize = true;
+			this->PC->Location = System::Drawing::Point(7, 50);
+			this->PC->Name = L"PC";
+			this->PC->Size = System::Drawing::Size(119, 21);
+			this->PC->TabIndex = 1;
+			this->PC->Text = L"Player vs CPU";
+			this->PC->UseVisualStyleBackColor = true;
+			this->PC->CheckedChanged += gcnew System::EventHandler(this, &Form1::PC_CheckedChanged);
 			// 
-			// radioButton1
+			// Player2
 			// 
-			this->radioButton1->AutoSize = true;
-			this->radioButton1->Location = System::Drawing::Point(7, 22);
-			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(131, 21);
-			this->radioButton1->TabIndex = 0;
-			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"Player vs Player";
-			this->radioButton1->UseVisualStyleBackColor = true;
+			this->Player2->AutoSize = true;
+			this->Player2->Checked = true;
+			this->Player2->Location = System::Drawing::Point(7, 22);
+			this->Player2->Name = L"Player2";
+			this->Player2->Size = System::Drawing::Size(131, 21);
+			this->Player2->TabIndex = 0;
+			this->Player2->TabStop = true;
+			this->Player2->Text = L"Player vs Player";
+			this->Player2->UseVisualStyleBackColor = true;
+			this->Player2->CheckedChanged += gcnew System::EventHandler(this, &Form1::Player2_CheckedChanged);
 			// 
 			// Rozpoczyna
 			// 
-			this->Rozpoczyna->Controls->Add(this->radioButton5);
-			this->Rozpoczyna->Controls->Add(this->radioButton4);
+			this->Rozpoczyna->Controls->Add(this->P);
+			this->Rozpoczyna->Controls->Add(this->C);
+			this->Rozpoczyna->Enabled = false;
 			this->Rozpoczyna->Location = System::Drawing::Point(1082, 276);
 			this->Rozpoczyna->Name = L"Rozpoczyna";
 			this->Rozpoczyna->Size = System::Drawing::Size(176, 79);
@@ -3144,43 +3151,47 @@ private: System::Windows::Forms::TextBox^  LOGS;
 			this->Rozpoczyna->TabStop = false;
 			this->Rozpoczyna->Text = L"Rozpoczyna";
 			// 
-			// radioButton5
+			// P
 			// 
-			this->radioButton5->AutoSize = true;
-			this->radioButton5->Location = System::Drawing::Point(7, 50);
-			this->radioButton5->Name = L"radioButton5";
-			this->radioButton5->Size = System::Drawing::Size(69, 21);
-			this->radioButton5->TabIndex = 1;
-			this->radioButton5->TabStop = true;
-			this->radioButton5->Text = L"Player";
-			this->radioButton5->UseVisualStyleBackColor = true;
+			this->P->AutoSize = true;
+			this->P->Checked = true;
+			this->P->Location = System::Drawing::Point(7, 50);
+			this->P->Name = L"P";
+			this->P->Size = System::Drawing::Size(69, 21);
+			this->P->TabIndex = 1;
+			this->P->TabStop = true;
+			this->P->Text = L"Player";
+			this->P->UseVisualStyleBackColor = true;
+			this->P->CheckedChanged += gcnew System::EventHandler(this, &Form1::P_CheckedChanged);
 			// 
-			// radioButton4
+			// C
 			// 
-			this->radioButton4->AutoSize = true;
-			this->radioButton4->Location = System::Drawing::Point(7, 22);
-			this->radioButton4->Name = L"radioButton4";
-			this->radioButton4->Size = System::Drawing::Size(57, 21);
-			this->radioButton4->TabIndex = 0;
-			this->radioButton4->TabStop = true;
-			this->radioButton4->Text = L"CPU";
-			this->radioButton4->UseVisualStyleBackColor = true;
+			this->C->AutoSize = true;
+			this->C->Location = System::Drawing::Point(7, 22);
+			this->C->Name = L"C";
+			this->C->Size = System::Drawing::Size(57, 21);
+			this->C->TabIndex = 0;
+			this->C->TabStop = true;
+			this->C->Text = L"CPU";
+			this->C->UseVisualStyleBackColor = true;
+			this->C->CheckedChanged += gcnew System::EventHandler(this, &Form1::C_CheckedChanged);
 			// 
-			// LOGS
+			// NG
 			// 
-			this->LOGS->Location = System::Drawing::Point(1082, 362);
-			this->LOGS->Multiline = true;
-			this->LOGS->Name = L"LOGS";
-			this->LOGS->Size = System::Drawing::Size(170, 491);
-			this->LOGS->TabIndex = 18;
-			this->LOGS->Click += gcnew System::EventHandler(this, &Form1::LOGS_Click);
+			this->NG->Location = System::Drawing::Point(1151, 13);
+			this->NG->Name = L"NG";
+			this->NG->Size = System::Drawing::Size(107, 87);
+			this->NG->TabIndex = 19;
+			this->NG->Text = L"Nowa Gra";
+			this->NG->UseVisualStyleBackColor = true;
+			this->NG->Click += gcnew System::EventHandler(this, &Form1::NG_Click);
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1270, 867);
-			this->Controls->Add(this->LOGS);
+			this->Controls->Add(this->NG);
 			this->Controls->Add(this->Rozpoczyna);
 			this->Controls->Add(this->Gracze);
 			this->Controls->Add(this->Right);
@@ -3221,7 +3232,6 @@ private: System::Windows::Forms::TextBox^  LOGS;
 			this->Rozpoczyna->ResumeLayout(false);
 			this->Rozpoczyna->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 
@@ -3230,6 +3240,7 @@ private: System::Windows::Forms::TextBox^  LOGS;
 		array<array<array<Button^>^>^>^ tab;
 		array<array<array<Button^>^>^>^ tabt;
 		array<array<array<Button^>^>^>^ table;
+		array<System::Drawing::Color>^ Colors;
 		array<String^>^ znak;
 		int tura;
 		array<RadioButton^>^ TuraButt;
@@ -3274,6 +3285,43 @@ private: System::Windows::Forms::TextBox^  LOGS;
 				table[tabw[i]->x][tabw[i]->y][tabw[i]->z]->BackColor=System::Drawing::Color::Red;
 			}
 		}
+		void Czysc(){
+			for(int k=0; k<4; k++){
+				for(int j=0; j<4; j++){
+					for(int i=0; i<4; i++){
+						tab[i][j][k]->Text=" ";
+						tabt[i][j][k]->Text=" ";
+						table[i][j][k]->Text=" ";
+						tab[i][j][k]->BackColor=Colors[k];
+						tabt[i][j][k]->BackColor=Colors[k];
+						table[i][j][k]->BackColor=Colors[k];
+						tab[i][j][k]->Enabled=true;
+						tabt[i][j][k]->Enabled=true;
+						table[i][j][k]->Enabled=true;
+					}
+				}
+			}
+			plansza=new Matryca;
+			komputer=new CPU;
+			komputer->Utworz(*plansza);
+			tura=0;
+			O->Checked=false;
+			X->Checked=false;
+		}
+
+		bool Wynik(){
+			if(plansza->Wygrana(Gracz())){
+				Lock();
+				Wygral->Text="Wygral gracz: "+Gracz();
+				return true;
+			}else{
+				if(plansza->Pelny()){
+					Wygral->Text="Remis";
+					return true;
+				}
+			}
+			return false;
+		}
 		
 #pragma endregion
 private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -3284,12 +3332,17 @@ private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e)
 			 znak[0]="O";
 			 znak[1]="X";
 
+			Colors=gcnew array<System::Drawing::Color>(4);
+			Colors[0]=f1->BackColor;
+			Colors[1]=mf1->BackColor;
+			Colors[2]=mb1->BackColor;
+			Colors[3]=b1->BackColor;
+
 			 tura=0;
 
 			 TuraButt=gcnew array<RadioButton^>(2);
 			 TuraButt[0]=O;
 			 TuraButt[1]=X;
-			 TuraButt[tura%2]->Checked=true;
 
 			 tab=gcnew array<array<array<Button^>^>^>(4);
 			 for(int i=0; i<4; i++){
@@ -3510,26 +3563,51 @@ private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e)
 			table[2][3][3]=ble15;
 			table[3][3][3]=ble16;
 
-
+			O->Checked=true;
 		 }
 		 
 private: System::Void O_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-			 if(O->Checked==false && X->Checked==false){
-				 komputer->PLAYERmove(*plansza);
-				 X->Checked=true;
-				 tura++;
+			 pole p;
+			 if(O->Checked==true){
+				 if(Player2->Checked==true){
+					 
+				 }
+				 if(CC->Checked==true){
+					 p=komputer->CPUmove(tura);
+					 tab[p.x][p.y][p.z]->PerformClick();
+				 }
+				 if(PC->Checked==true){
+					 if(P->Checked==true){
+						 
+					 }
+					 if(C->Checked==true){
+						 p=komputer->CPUmove(tura);
+						 tab[p.x][p.y][p.z]->PerformClick();
+					 }
+				 }
 			 }
 		 }
 
 
 private: System::Void X_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-			 pole elem;
+			 pole p;
 			 if(X->Checked==true){
-				 elem=komputer->CPUmove(tura);
-				 plansza->Add(elem.x, elem.y, elem.z, elem.znacznik);
-				 tab[elem.x][elem.y][elem.z]->PerformClick();
-				 O->Checked=true;
-				 tura++;
+				 if(Player2->Checked==true){
+					 
+				 }
+				 if(CC->Checked==true){
+					 p=komputer->CPUmove(tura);
+					 tab[p.x][p.y][p.z]->PerformClick();
+				 }
+				 if(PC->Checked==true){
+					 if(P->Checked==true){
+						 p=komputer->CPUmove(tura);
+						 tab[p.x][p.y][p.z]->PerformClick();
+					 }
+					 if(C->Checked==true){
+						 
+					 }
+				 }
 			 }
 		 }
 private: System::Void f1_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -3540,17 +3618,12 @@ private: System::Void f1_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[0][0][0]->Enabled=false;
 			table[0][0][0]->Enabled=false;
 			plansza->Add(0, 0, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f2_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][0][0]->Text=Gracz();
@@ -3560,17 +3633,12 @@ private: System::Void f2_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[1][0][0]->Enabled=false;
 			table[1][0][0]->Enabled=false;
 			plansza->Add(1, 0, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f3_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][0][0]->Text=Gracz();
@@ -3580,17 +3648,12 @@ private: System::Void f3_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[2][0][0]->Enabled=false;
 			table[2][0][0]->Enabled=false;
 			plansza->Add(2, 0, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f4_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][0][0]->Text=Gracz();
@@ -3600,17 +3663,12 @@ private: System::Void f4_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[3][0][0]->Enabled=false;
 			table[3][0][0]->Enabled=false;
 			plansza->Add(3, 0, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f5_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][1][0]->Text=Gracz();
@@ -3620,17 +3678,12 @@ private: System::Void f5_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[0][1][0]->Enabled=false;
 			table[0][1][0]->Enabled=false;
 			plansza->Add(0, 1, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f6_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][1][0]->Text=Gracz();
@@ -3640,17 +3693,12 @@ private: System::Void f6_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[1][1][0]->Enabled=false;
 			table[1][1][0]->Enabled=false;
 			plansza->Add(1, 1, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f7_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][1][0]->Text=Gracz();
@@ -3660,17 +3708,12 @@ private: System::Void f7_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[2][1][0]->Enabled=false;
 			table[2][1][0]->Enabled=false;
 			plansza->Add(2, 1, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f8_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][1][0]->Text=Gracz();
@@ -3680,17 +3723,12 @@ private: System::Void f8_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[3][1][0]->Enabled=false;
 			table[3][1][0]->Enabled=false;
 			plansza->Add(3, 1, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f9_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][2][0]->Text=Gracz();
@@ -3700,17 +3738,12 @@ private: System::Void f9_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[0][2][0]->Enabled=false;
 			table[0][2][0]->Enabled=false;
 			plansza->Add(0, 2, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f10_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][2][0]->Text=Gracz();
@@ -3720,17 +3753,12 @@ private: System::Void f10_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[1][2][0]->Enabled=false;
 			table[1][2][0]->Enabled=false;
 			plansza->Add(1, 2, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f11_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][2][0]->Text=Gracz();
@@ -3740,17 +3768,12 @@ private: System::Void f11_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[2][2][0]->Enabled=false;
 			table[2][2][0]->Enabled=false;
 			plansza->Add(2, 2, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f12_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][2][0]->Text=Gracz();
@@ -3760,17 +3783,12 @@ private: System::Void f12_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[3][2][0]->Enabled=false;
 			table[3][2][0]->Enabled=false;
 			plansza->Add(3, 2, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f13_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][3][0]->Text=Gracz();
@@ -3780,17 +3798,12 @@ private: System::Void f13_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[0][3][0]->Enabled=false;
 			table[0][3][0]->Enabled=false;
 			plansza->Add(0, 3, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f14_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][3][0]->Text=Gracz();
@@ -3800,17 +3813,12 @@ private: System::Void f14_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[1][3][0]->Enabled=false;
 			table[1][3][0]->Enabled=false;
 			plansza->Add(1, 3, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f15_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][3][0]->Text=Gracz();
@@ -3820,17 +3828,12 @@ private: System::Void f15_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[2][3][0]->Enabled=false;
 			table[2][3][0]->Enabled=false;
 			plansza->Add(2, 3, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void f16_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][3][0]->Text=Gracz();
@@ -3840,17 +3843,12 @@ private: System::Void f16_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[3][3][0]->Enabled=false;
 			table[3][3][0]->Enabled=false;
 			plansza->Add(3, 3, 0, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf1_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][0][1]->Text=Gracz();
@@ -3860,17 +3858,12 @@ private: System::Void mf1_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[0][0][1]->Enabled=false;
 			table[0][0][1]->Enabled=false;
 			plansza->Add(0, 0, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf2_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][0][1]->Text=Gracz();
@@ -3880,17 +3873,12 @@ private: System::Void mf2_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[1][0][1]->Enabled=false;
 			table[1][0][1]->Enabled=false;
 			plansza->Add(1, 0, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf3_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][0][1]->Text=Gracz();
@@ -3900,17 +3888,12 @@ private: System::Void mf3_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[2][0][1]->Enabled=false;
 			table[2][0][1]->Enabled=false;
 			plansza->Add(2, 0, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf4_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][0][1]->Text=Gracz();
@@ -3920,17 +3903,12 @@ private: System::Void mf4_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[3][0][1]->Enabled=false;
 			table[3][0][1]->Enabled=false;
 			plansza->Add(3, 0, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf5_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][1][1]->Text=Gracz();
@@ -3940,17 +3918,12 @@ private: System::Void mf5_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[0][1][1]->Enabled=false;
 			table[0][1][1]->Enabled=false;
 			plansza->Add(0, 1, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf6_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][1][1]->Text=Gracz();
@@ -3960,17 +3933,12 @@ private: System::Void mf6_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[1][1][1]->Enabled=false;
 			table[1][1][1]->Enabled=false;
 			plansza->Add(1, 1, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf7_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][1][1]->Text=Gracz();
@@ -3980,17 +3948,12 @@ private: System::Void mf7_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[2][1][1]->Enabled=false;
 			table[2][1][1]->Enabled=false;
 			plansza->Add(2, 1, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf8_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][1][1]->Text=Gracz();
@@ -4000,17 +3963,12 @@ private: System::Void mf8_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[3][1][1]->Enabled=false;
 			table[3][1][1]->Enabled=false;
 			plansza->Add(3, 1, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf9_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][2][1]->Text=Gracz();
@@ -4020,17 +3978,12 @@ private: System::Void mf9_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[0][2][1]->Enabled=false;
 			table[0][2][1]->Enabled=false;
 			plansza->Add(0, 2, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf10_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][2][1]->Text=Gracz();
@@ -4040,17 +3993,12 @@ private: System::Void mf10_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[1][2][1]->Enabled=false;
 			table[1][2][1]->Enabled=false;
 			plansza->Add(1, 2, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf11_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][2][1]->Text=Gracz();
@@ -4060,17 +4008,12 @@ private: System::Void mf11_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[2][2][1]->Enabled=false;
 			table[2][2][1]->Enabled=false;
 			plansza->Add(2, 2, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf12_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][2][1]->Text=Gracz();
@@ -4080,17 +4023,12 @@ private: System::Void mf12_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[3][2][1]->Enabled=false;
 			table[3][2][1]->Enabled=false;
 			plansza->Add(3, 2, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf13_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][3][1]->Text=Gracz();
@@ -4100,17 +4038,12 @@ private: System::Void mf13_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[0][3][1]->Enabled=false;
 			table[0][3][1]->Enabled=false;
 			plansza->Add(0, 3, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf14_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][3][1]->Text=Gracz();
@@ -4120,17 +4053,12 @@ private: System::Void mf14_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[1][3][1]->Enabled=false;
 			table[1][3][1]->Enabled=false;
 			plansza->Add(1, 3, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf15_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][3][1]->Text=Gracz();
@@ -4140,17 +4068,12 @@ private: System::Void mf15_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[2][3][1]->Enabled=false;
 			table[2][3][1]->Enabled=false;
 			plansza->Add(2, 3, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mf16_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][3][1]->Text=Gracz();
@@ -4160,17 +4083,12 @@ private: System::Void mf16_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[3][3][1]->Enabled=false;
 			table[3][3][1]->Enabled=false;
 			plansza->Add(3, 3, 1, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb1_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][0][2]->Text=Gracz();
@@ -4180,17 +4098,12 @@ private: System::Void mb1_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[0][0][2]->Enabled=false;
 			table[0][0][2]->Enabled=false;
 			plansza->Add(0, 0, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb2_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][0][2]->Text=Gracz();
@@ -4200,17 +4113,12 @@ private: System::Void mb2_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[1][0][2]->Enabled=false;
 			table[1][0][2]->Enabled=false;
 			plansza->Add(1, 0, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb3_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][0][2]->Text=Gracz();
@@ -4220,17 +4128,12 @@ private: System::Void mb3_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[2][0][2]->Enabled=false;
 			table[2][0][2]->Enabled=false;
 			plansza->Add(2, 0, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb4_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][0][2]->Text=Gracz();
@@ -4240,17 +4143,12 @@ private: System::Void mb4_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[3][0][2]->Enabled=false;
 			table[3][0][2]->Enabled=false;
 			plansza->Add(3, 0, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb5_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][1][2]->Text=Gracz();
@@ -4260,17 +4158,12 @@ private: System::Void mb5_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[0][1][2]->Enabled=false;
 			table[0][1][2]->Enabled=false;
 			plansza->Add(0, 1, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb6_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][1][2]->Text=Gracz();
@@ -4280,17 +4173,12 @@ private: System::Void mb6_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[1][1][2]->Enabled=false;
 			table[1][1][2]->Enabled=false;
 			plansza->Add(1, 1, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb7_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][1][2]->Text=Gracz();
@@ -4300,17 +4188,12 @@ private: System::Void mb7_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[2][1][2]->Enabled=false;
 			table[2][1][2]->Enabled=false;
 			plansza->Add(2, 1, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb8_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][1][2]->Text=Gracz();
@@ -4320,17 +4203,12 @@ private: System::Void mb8_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[3][1][2]->Enabled=false;
 			table[3][1][2]->Enabled=false;
 			plansza->Add(3, 1, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb9_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][2][2]->Text=Gracz();
@@ -4340,17 +4218,12 @@ private: System::Void mb9_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[0][2][2]->Enabled=false;
 			table[0][2][2]->Enabled=false;
 			plansza->Add(0, 2, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb10_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][2][2]->Text=Gracz();
@@ -4360,17 +4233,12 @@ private: System::Void mb10_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[1][2][2]->Enabled=false;
 			table[1][2][2]->Enabled=false;
 			plansza->Add(1, 2, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb11_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][2][2]->Text=Gracz();
@@ -4380,17 +4248,12 @@ private: System::Void mb11_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[2][2][2]->Enabled=false;
 			table[2][2][2]->Enabled=false;
 			plansza->Add(2, 2, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb12_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][2][2]->Text=Gracz();
@@ -4400,17 +4263,12 @@ private: System::Void mb12_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[3][2][2]->Enabled=false;
 			table[3][2][2]->Enabled=false;
 			plansza->Add(3, 2, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb13_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][3][2]->Text=Gracz();
@@ -4420,17 +4278,12 @@ private: System::Void mb13_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[0][3][2]->Enabled=false;
 			table[0][3][2]->Enabled=false;
 			plansza->Add(0, 3, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb14_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][3][2]->Text=Gracz();
@@ -4440,17 +4293,12 @@ private: System::Void mb14_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[1][3][2]->Enabled=false;
 			table[1][3][2]->Enabled=false;
 			plansza->Add(1, 3, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb15_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][3][2]->Text=Gracz();
@@ -4460,17 +4308,12 @@ private: System::Void mb15_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[2][3][2]->Enabled=false;
 			table[2][3][2]->Enabled=false;
 			plansza->Add(2, 3, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void mb16_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][3][2]->Text=Gracz();
@@ -4480,17 +4323,12 @@ private: System::Void mb16_Click(System::Object^  sender, System::EventArgs^  e)
 			tabt[3][3][2]->Enabled=false;
 			table[3][3][2]->Enabled=false;
 			plansza->Add(3, 3, 2, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b1_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][0][3]->Text=Gracz();
@@ -4500,17 +4338,12 @@ private: System::Void b1_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[0][0][3]->Enabled=false;
 			table[0][0][3]->Enabled=false;
 			plansza->Add(0, 0, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b2_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][0][3]->Text=Gracz();
@@ -4520,17 +4353,12 @@ private: System::Void b2_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[1][0][3]->Enabled=false;
 			table[1][0][3]->Enabled=false;
 			plansza->Add(1, 0, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b3_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][0][3]->Text=Gracz();
@@ -4540,17 +4368,12 @@ private: System::Void b3_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[2][0][3]->Enabled=false;
 			table[2][0][3]->Enabled=false;
 			plansza->Add(2, 0, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b4_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][0][3]->Text=Gracz();
@@ -4560,17 +4383,12 @@ private: System::Void b4_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[3][0][3]->Enabled=false;
 			table[3][0][3]->Enabled=false;
 			plansza->Add(3, 0, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b5_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][1][3]->Text=Gracz();
@@ -4580,17 +4398,12 @@ private: System::Void b5_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[0][1][3]->Enabled=false;
 			table[0][1][3]->Enabled=false;
 			plansza->Add(0, 1, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b6_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][1][3]->Text=Gracz();
@@ -4600,17 +4413,12 @@ private: System::Void b6_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[1][1][3]->Enabled=false;
 			table[1][1][3]->Enabled=false;
 			plansza->Add(1, 1, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b7_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][1][3]->Text=Gracz();
@@ -4620,17 +4428,12 @@ private: System::Void b7_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[2][1][3]->Enabled=false;
 			table[2][1][3]->Enabled=false;
 			plansza->Add(2, 1, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b8_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][1][3]->Text=Gracz();
@@ -4640,17 +4443,12 @@ private: System::Void b8_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[3][1][3]->Enabled=false;
 			table[3][1][3]->Enabled=false;
 			plansza->Add(3, 1, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b9_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][2][3]->Text=Gracz();
@@ -4660,17 +4458,12 @@ private: System::Void b9_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabt[0][2][3]->Enabled=false;
 			table[0][2][3]->Enabled=false;
 			plansza->Add(0, 2, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b10_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][2][3]->Text=Gracz();
@@ -4680,17 +4473,12 @@ private: System::Void b10_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[1][2][3]->Enabled=false;
 			table[1][2][3]->Enabled=false;
 			plansza->Add(1, 2, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b11_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][2][3]->Text=Gracz();
@@ -4700,17 +4488,12 @@ private: System::Void b11_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[2][2][3]->Enabled=false;
 			table[2][2][3]->Enabled=false;
 			plansza->Add(2, 2, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b12_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][2][3]->Text=Gracz();
@@ -4720,17 +4503,12 @@ private: System::Void b12_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[3][2][3]->Enabled=false;
 			table[3][2][3]->Enabled=false;
 			plansza->Add(3, 2, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b13_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[0][3][3]->Text=Gracz();
@@ -4740,17 +4518,12 @@ private: System::Void b13_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[0][3][3]->Enabled=false;
 			table[0][3][3]->Enabled=false;
 			plansza->Add(0, 3, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b14_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[1][3][3]->Text=Gracz();
@@ -4760,17 +4533,12 @@ private: System::Void b14_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[1][3][3]->Enabled=false;
 			table[1][3][3]->Enabled=false;
 			plansza->Add(1, 3, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b15_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[2][3][3]->Text=Gracz();
@@ -4780,17 +4548,12 @@ private: System::Void b15_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[2][3][3]->Enabled=false;
 			table[2][3][3]->Enabled=false;
 			plansza->Add(2, 3, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
 private: System::Void b16_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab[3][3][3]->Text=Gracz();
@@ -4800,30 +4563,58 @@ private: System::Void b16_Click(System::Object^  sender, System::EventArgs^  e) 
 			tabt[3][3][3]->Enabled=false;
 			table[3][3][3]->Enabled=false;
 			plansza->Add(3, 3, 3, Gracz());
-			if(plansza->Wygrana(Gracz())){
-				Lock();
-				Wygral->Text="Wygral gracz: "+Gracz();
-			}else{
-				if(plansza->Pelny()){
-					Wygral->Text="Remis";
-				} else {
-					TuraButt[tura%2]->Checked=false;
-				}
+			komputer->PLAYERmove(*plansza);
+			if(!Wynik()){
+				tura++;
+				TuraButt[tura%2]->Checked=true;
 			}
-		}
+}
 
-
-
-private: System::Void LOGS_Click(System::Object^  sender, System::EventArgs^  e) {
-			 string ex;
-			 for(int x=0; x<76; x++){
-				 for(int y=0; y<4; y++){
-					 ex.clear();
-					 ex.push_back(plansza->szablon[x][y]->znacznik);
-					 String^ mys=gcnew String(ex.c_str());
-					 LOGS->AppendText(mys);
-				 }
-				 LOGS->AppendText("\n");
+private: System::Void Player2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 if(Player2->Checked==true){
+				 Rozpoczyna->Enabled=false;
+				 Czysc();
+				 O->Checked=true;
+			 }
+		 }
+private: System::Void PC_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 if(PC->Checked==true){
+				 Czysc();
+				 Rozpoczyna->Enabled=true;
+				 O->Checked=true;
+			 }
+		 }
+private: System::Void CC_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 if(CC->Checked==true){
+				 Rozpoczyna->Enabled=false;
+				 Czysc();
+				 O->Checked=true;
+			 }
+		 }
+private: System::Void C_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 if(C->Checked==true){
+				 Czysc();
+				 O->Checked=true;
+			 }
+		 }
+private: System::Void P_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 if(P->Checked==true){
+				 Czysc();
+				 O->Checked=true;
+			 }
+		 }
+private: System::Void NG_Click(System::Object^  sender, System::EventArgs^  e) {
+			 if(Player2->Checked==true){
+				 Player2->Checked=false;
+				 Player2->Checked=true;
+			 }
+			 if(PC->Checked==true){
+				 PC->Checked=false;
+				 PC->Checked=true;
+			 }
+			 if(CC->Checked==true){
+				 CC->Checked=false;
+				 CC->Checked=true;
 			 }
 		 }
 };

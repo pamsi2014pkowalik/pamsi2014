@@ -1,4 +1,4 @@
-﻿Build started 2014-06-22 04:10:45.
+﻿Build started 2014-06-25 20:19:20.
      1>Project "C:\Users\RAZIL Laptop\documents\visual studio 2010\Projects\kolkoikrzyzyk\kolkoikrzyzyk\kolkoikrzyzyk.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\kolkoikrzyzyk.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -8,10 +8,11 @@
          All outputs are up-to-date.
          D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\kolkoikrzyzyk.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt kolkoikrzyzyk.cpp /clr:nostdlib 
          kolkoikrzyzyk.cpp
-     1>c:\users\razil laptop\documents\visual studio 2010\projects\kolkoikrzyzyk\kolkoikrzyzyk\matryca.h(223): warning C4715: 'Matryca::Wygrana1' : not all control paths return a value
+     1>c:\users\razil laptop\documents\visual studio 2010\projects\kolkoikrzyzyk\kolkoikrzyzyk\matryca.h(224): warning C4715: 'Matryca::Wygrana1' : not all control paths return a value
          All outputs are up-to-date.
        CoreResGen:
-         No resources are out of date with respect to their source files. Skipping resource generation.
+         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile Form1.resX,Debug\kolkoikrzyzyk.Form1.resources
+         Processing resource file "Form1.resX" into "Debug\kolkoikrzyzyk.Form1.resources".
        ResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -30,4 +31,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.84
+Time Elapsed 00:00:05.14

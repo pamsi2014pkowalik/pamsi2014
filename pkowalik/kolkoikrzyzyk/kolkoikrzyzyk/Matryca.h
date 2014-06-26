@@ -1,6 +1,7 @@
 #include<iostream>
 #include <msclr/marshal_cppstd.h>
 #include"pole.h"
+#include<cmath>
 class Matryca{
 public:
 	int wolnych;
@@ -223,10 +224,16 @@ vector<pole*> Matryca::Wygrana1(System::String^ gamer){
 }
 
 bool Matryca::Pelny(){
-	if(wolnych==0){
-		return true;
+	for(int k=0; k<4; k++){
+		for(int j=0; j<4; j++){
+			for(int i=0; i<4; i++){
+				if(matrix[i][j][k].znacznik=='-'){
+					return false;
+				}
+			}
+		}
 	}
-	return false;
+	return true;
 }
 
 void Matryca::Add(int x, int y, int z, System::String^ gamer){
@@ -255,7 +262,7 @@ int Matryca::Analizuj(char znak){
 		przeciw=0;
 		for(int y=0; y<4; y++){
 			if((*szablon[x][y])==przeciwnik(znak)){
-				przeciw+=100;
+				przeciw+=1;
 			}
 			if((*szablon[x][y])==znak){
 				ty+=1;
@@ -265,14 +272,14 @@ int Matryca::Analizuj(char znak){
 			ty=0;
 			przeciw=0;
 		} else {
-			if(przeciw==3){
-				return (numeric_limits<int>::min)();
-			}
 			if(ty==4){
 				return (numeric_limits<int>::max)();
 			}
+			if(przeciw==3){
+				return (numeric_limits<int>::min)()+1;
+			}
+			strata+=przeciw*przeciw*5;
 			zysk+=ty;
-			strata+=przeciw;
 		}
 	}
 	return zysk-strata;
